@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+"""
+requirements.txt equivalent - install all backends.
+Run: pip install -r requirements.txt
+"""
+
+# Core (always needed)
+pymupdf4llm>=0.0.17
+
+# Backend: Docling (IBM) - best CPU-only table extraction
+# docling>=2.0.0
+
+# Backend: Marker - high accuracy, GPU recommended
+# marker-pdf>=0.1.0
+
+# Backend: MinerU - most powerful, needs model download
+# magic-pdf[full]>=0.10.0
+
+# Note: Uncomment the backends you want to install.
+# PyMuPDF4LLM is installed by default as it needs no GPU.

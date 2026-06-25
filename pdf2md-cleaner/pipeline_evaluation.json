@@ -1,0 +1,34 @@
+﻿{
+  "design_score": 7,
+  "strengths": [
+    "Comprehensive post-processing tailored for MCU manuals (hex addresses, register names, table fixes).",
+    "Multiple backends covering CPU-only and GPU-accelerated options for flexibility.",
+    "LLM-based evaluation provides objective scoring across key dimensions.",
+    "Removal of TOC, revision history, and vendor names reduces noise for downstream tasks."
+  ],
+  "weaknesses": [
+    "No fallback or merging strategy if a backend fails or produces poor output.",
+    "GPU backends (Marker, MinerU) may be overkill for simple MCU manuals, increasing latency/cost.",
+    "Post-processing patterns are not versioned or tested against diverse manual formats.",
+    "LLM evaluation adds overhead and may introduce bias; no human validation step."
+  ],
+  "recommendations": [
+    "Implement a voting or confidence-based merging mechanism across backends.",
+    "Add a lightweight pre-processing step to detect manual type and route to optimal backend.",
+    "Create a curated test set of MCU manuals for regression testing of cleanup patterns.",
+    "Consider a hybrid evaluation: LLM scores + automated checks (e.g., hex pattern coverage)."
+  ],
+  "backend_ranking": [
+    "PyMuPDF4LLM",
+    "Docling",
+    "Marker",
+    "MinerU"
+  ],
+  "additional_cleanup_patterns": [
+    "Remove or normalize interrupt vector table entries (e.g., 'IRQn_Type').",
+    "Standardize bit-field notation (e.g., 'bit[3:0]' to 'bits 3-0').",
+    "Collapse repeated blank lines from table row separators.",
+    "Replace Unicode math symbols (e.g., 'Ã', 'Â±') with ASCII equivalents.",
+    "Remove or flag ambiguous register access symbols (e.g., 'R/W', 'RC_W1')."
+  ]
+}
