@@ -4,7 +4,7 @@
 
 ## 为什么需要
 
-MCU 厂商的编程手册（Reference Manual / Datasheet / User Manual）通常几百页起步，转成 Markdown 后每页都夹杂着 "STMicroelectronics"、"Page 45/200"、"-46-"、版权声明等重复内容，表格格式也经常断裂。本工具解决这些问题。
+MCU 厂商、控制器、芯片的编程手册（Reference Manual / Datasheet / User Manual）通常几百页起步，转成 Markdown 后每页都夹杂着 "STMicroelectronics"、"Page 45/200"、"-46-"版权声明等重复内容，表格格式也经常断裂。本工具解决这些问题。
 
 ## 效果一览
 
